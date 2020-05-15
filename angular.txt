@@ -5,7 +5,10 @@ stage ('Prepare environment'){
    }
  stage('install packages nodejs'){
 sh label: '', script: '''apt update
-  rm -Rf /var/lib/apt/lists/lock'''
+rm -Rf /var/lib/apt/lists/lock 
+rm -Rf /var/cache/apt/pkgcache.bin 
+rm -Rf /var/cache/apt/srcpkgcache.bin'''
+  
      }
  }
  
