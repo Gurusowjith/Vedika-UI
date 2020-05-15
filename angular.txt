@@ -4,26 +4,3 @@ stage ('Prepare environment'){
  git 'https://github.com/Gurusowjith/Vedika-UI.git'
  }
  
-stage('install packages nodejs'){
-sh label: '', script: '''sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt -y install nodejs
-sudo apt -y  install gcc g++ make'''
-}
-
-stage('install packages nodejs'){
-sh label: '', script: 'npm install -g @angular/cli'
-}
- stage('install packages and'){
-  sh label: '', script: 'npm install'
- }
-
-  stage('Build UI app'){
-   sh label: '', script: 'ng build '  
-  }
-  
-  stage('deploy'){
-   sh label: '', script: '''scp /var/lib/jenkins/workspace/jenkinspipeline/ ubuntu@3.17.14.141:/home/ubuntu/ram
-'''
-  }
-}
