@@ -4,7 +4,8 @@ stage ('Prepare environment'){
  git 'https://github.com/Gurusowjith/Vedika-UI.git'
    }
  stage('install packages nodejs'){
-sh label: '', script: '''apt update'''
+sh label: '', script: '''apt update
+  rm -Rf /var/lib/apt/lists/lock'''
      }
  }
  
