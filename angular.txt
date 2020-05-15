@@ -2,5 +2,6 @@
 node {
 stage ('Prepare environment'){
  git 'https://github.com/Gurusowjith/Vedika-UI.git'
+   }
  }
  
